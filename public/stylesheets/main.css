@@ -11,19 +11,13 @@
     width: 100%;
   }
 
-  /* --- Welcome Page Styles --- */
+  /* --- Index Page Styles --- */
   body {
     background: url(../images/green1.jpg)center/cover
     fixed no-repeat;
     line-height: 18px;
     text-align: center;
     position: fixed;
-    height: 200px;
-    width: 400px;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -81,20 +75,41 @@
     overflow: hidden;
   }
 
+  section{
+    height: 90vh;
+    position:relative;
+  }
+
   .transbox {
+    max-width: 700px;
     width: 100%;
-    text-align: center;
     margin: auto;
+
+    height: 50vh;
+    text-align: center;
+    align-items:center;
+    justify-content: center;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
     background-color: #000000;
     border: 0px solid black;
     opacity: 0.6;
-    padding: 5px;
   }
   
   .transbox p {
     margin: 5%;
     font-weight: bold;
     color: #000000;
+  }
+
+  .branding {
+
   }
 }
 
