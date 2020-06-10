@@ -41,6 +41,10 @@
     font-size: 18px;
     line-height: 36px;
   }
+  
+  h6 {
+    display: inline;
+  }
 
   p {
     margin-bottom: 18px;
@@ -76,7 +80,7 @@
   }
 
   section{
-    height: 90vh;
+    height: 60vh;
     position:relative;
   }
 
@@ -85,7 +89,7 @@
     width: 100%;
     margin: auto;
 
-    height: 50vh;
+    height: 60vh;
     text-align: center;
     align-items:center;
     justify-content: center;

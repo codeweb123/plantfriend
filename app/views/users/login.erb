@@ -1,0 +1,22 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <section>
+        <div class="transbox">
+            <br><br><h1>Log In!</h1><br>
+        <form method="POST" action="/users/login">
+            <h4><label for="username">Username:</label></h4>
+            <input id="username" type="text" name="username"><br><br>
+            <h4><label for="password">Password:</label></h4>
+            <input id="password" type="password" name="password"><br><br>
+            <p><a href='/signup'>Sign up here.</a></p>
+            <button class="btn btn-success btn-lg" type="submit" value="Sign Up">Sign Up</button>
+            <p>Don't have an account yet?</p>
+            <p><a href='/signup'>Sign up here.</a></p>
+            <p><a href='/'>Back to the main page.</a></p>
+        </form>
+        </div>
+    </section>
+  </body>
