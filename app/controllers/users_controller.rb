@@ -6,21 +6,17 @@ class UsersController < ApplicationController
         end
       #Processing form and create new object
       post '/users/signup' do
+        @user = User.create(params)
         if is_logged_in?
           flash[:message] = "You are already logged in."
           redirect to '/users/login'
-        elsif params[:username] == "" ||
+        elsif params[:username] == "" || #check if we have bad data
               params[:email] == "" || 
               params[:password] == ""
           flash[:message] = "In order to sign up account, you must have a username, email & a password. Please try again."
-          redirect to 'users/signup'
+          redirect to '/users/signup'
         else
-          @user = User.create(
-            username: params[:username], 
-            email: params[:email], 
-            password: params[:password]
-          ) #store it inside an instance variable, (username:) is the name of the column and insert the params[:username] from the params
-          @user.save
+          @user                        #store it inside an instance variable, (username:) is the name of the column and insert the params[:username] from the params
           session[:user_id] = @user.id #creates a new key/value pair
           redirect to "/users/login"
         end
