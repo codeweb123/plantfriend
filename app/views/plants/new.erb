@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <section>
+        <div class="transbox">
+            <br><br><h1>Add Plant</h1><br>
+            <form method="POST" action="/plants">
+            <label for="name">Name:</label>
+            <input id="name" type="text" name="name" required>
+            <label for="num_water_day">Water Days:</label>
+            <input id="" type="integer" name="num_water_day" required>
+            <label for="num_fert_day">Fertilizer Days:</label>
+            <input id="" type="integer" name="num_fert_day">
+            <label for="num_prune_day">Prune Days:</label>
+            <input id="" type="integer" name="num_prune_day"> 
+            <input type="submit" value="Add Plant">
+            <a href="/plants/index" type="button" class="btn btn-primary btn-lg">My Plants!</a>
+            </form>
+        </div>
+    </section>
+  </body>
