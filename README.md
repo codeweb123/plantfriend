@@ -1,7 +1,7 @@
 # Project name
 
 
-PlantFriend is a Sinatra application that uses CRUD capabilities and allows any hobby botanist to keep track to care for their house plants. The PlantFriend app is my second project at the Flatiron School 2020. 
+PlantFriend is a Sinatra application that uses CRUD capabilities and allows any hobby botanist to keep track of todos for their house plants. The PlantFriend app is my second project at the Flatiron School 2020. 
 
 PlantFriend allows you to add room locations, plants and the app keeps a list of todos such as watering, fertilizing and pruning your plants. 
 
