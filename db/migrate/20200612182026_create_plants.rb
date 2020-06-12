@@ -5,8 +5,8 @@ class CreatePlants < ActiveRecord::Migration
       t.integer :num_water_day
       t.integer :num_fert_day
       t.integer :num_prune_day
-      t.integer :location_id
+      t.string :location_id
       t.timestamps
-    end   
+    end
   end
 end
