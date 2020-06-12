@@ -6,9 +6,9 @@ PlantFriend is a Sinatra application that uses CRUD capabilities and allows any 
 PlantFriend allows you to add room locations, plants and the app keeps a list of todos such as watering, fertilizing and pruning your plants. 
 
 
-## Installing <plant-friend>
+## Installing <plantfriend>
 
-To install <plant-friend>, follow these steps:
+To install <plantfriend>, follow these steps:
 
 Linux and macOS:
 ```
@@ -24,9 +24,9 @@ Linux and macOS:
 -open your browser and enter the given local url provided by the shotgun server
 >
 ```
-## Contributing to <plant-friend>
+## Contributing to <plantfriend>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to <plant-friend>, follow these steps:
+To contribute to <plantfriend>, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
