@@ -6,18 +6,17 @@
     <section>
         <div class="transbox">
           <br><br><br><h1>Plant Name: <%=@plant.name%></h1><br>
+                      <h1>Location: <%=@plant.plants%></h1>
             <h1>Todo:</h1><br>
                 <h3>Water in <%=@plant.num_water_day%> days</h3>
                 <h3>Fertilize in <%=@plant.num_fert_day%> days</h3>
                 <h3>Prune in <%=@plant.num_prune_day%> days</h3><br>
-
                 <a href="/plants/<%=@plant.id%>/edit" type="button" class="btn btn-success btn-lg">Edit</a><br><br>
                 <a href="/plants/index" type="button" class="btn btn-success btn-lg">My Plants</a><br><br>
-
               <form method="post" action="/plants/<%= @plant.id %>">
                 <input id="hidden" type="hidden" name="_method" value="DELETE">
                 <input type="submit" class="btn btn-outline-danger" value="delete">
               </form>
-          </div>
+        </div>
     </section>
   </body>
