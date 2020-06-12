@@ -1,7 +1,7 @@
 # Project name
 
 
-PlantFriend is a Sinatra application that uses CRUD capabilities and allows any hobby botanist to keep track to care for their house plants. The PlantFriend app is my second project at the Flatiron School 2020. 
+PlantFriend is a Sinatra application that uses CRUD capabilities and allows any hobby botanist to keep track of todos for their house plants. The PlantFriend app is my second project at the Flatiron School 2020. 
 
 PlantFriend allows you to add room locations, plants and the app keeps a list of todos such as watering, fertilizing and pruning your plants. 
 
@@ -12,7 +12,7 @@ To install <plantfriend>, follow these steps:
 
 Linux and macOS:
 ```
-<
+
 -download or clone this project
 
 -cd into plant-friend directory
@@ -22,7 +22,7 @@ Linux and macOS:
 -run shotgun
 
 -open your browser and enter the given local url provided by the shotgun server
->
+
 ```
 ## Contributing to <plantfriend>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
