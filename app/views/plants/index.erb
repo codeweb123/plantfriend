@@ -6,9 +6,13 @@
     <section>
         <div class="transbox">
         <br><br><h1>My Plants!</h1><br>
-        <h4><% @locations.each do |lo| %></h4>
-          <h4><%= lo.name %></h4>
+          <% @plants.each do |plant| %>
+          <% p = plant.created_at %>
+          <h4><%= p.strftime ("%B %e, %Y") %></h4>
+          <h4><%= plant.name %></h4>
+          <h6><a href="/plants/<%=plant.id%>">click to see todos</a></h6><br>
           <%end%>
+
         <a href="/locations/new" type="button" class="btn btn-success btn-lg">Add Locations</a><br><br>
         <a href="/plants/new" type="button" class="btn btn-success btn-lg">Add Plants</a><br><br>
         <a href="/users/logout" type="button" class="btn btn-success btn-lg">Log Out</a>

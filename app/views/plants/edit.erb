@@ -5,34 +5,39 @@
   <body>
     <section>
         <div class="transbox">
-            <br><h1>Add Plant</h1>
-            <form method="POST" action="/plants">
+            <br><br><h1>Edit Plant</h1><br>
+            <form method="POST" action="/plants/<%= @plant.id%>">
+            <input type="hidden" name="_method" value="put">
+
             <h2><label for="name">Name:</label></h2>
-            <input id="name" type="text" name="name" required><br><br>
+            <input id="name" type="text" name="name"><br><br>
             <h4><label for="num_water_day">Water every <input id="" type="number" min="1" max="30" name="num_water_day" required> days.</label></h4>
             <h4><label for="num_fert_day">Fertilize every <input id="" type="number" min="1" max="30"  name="num_fert_day"> days.</label></h4>
             <h4><label for="num_prune_day">Prune every <input id="" type="number" min="1" max="30"  name="num_prune_day"> days.</label></h4><br>
  
-            <h2>Pick one location below:</h2>
-            <h4><input type="checkbox" id="1" name="location_id">
+            <h1>Pick one location below:</h1>
+            <h4><input type="checkbox" id="" name="location_id">
             <label for="location_id"> Bedroom </label><br>
-            <input type="checkbox" id="2" name="location_id">
+            <input type="checkbox" id="" name="location_id">
             <label for="location_id"> Hallway </label><br>
-            <input type="checkbox" id="3" name="location_id">
+            <input type="checkbox" id="" name="location_id">
             <label for="location_id"> Kitchen </label><br>
-            <input type="checkbox" id="4" name="location_id">
+            <input type="checkbox" id="" name="location_id">
             <label for="location_id"> Living Room </label><br>
-            <input type="checkbox" id="5" name="location_id">
+            <input type="checkbox" id="" name="location_id">
             <label for="location_id"> Office </label><br>
-            <input type="checkbox" id="6" name="location_id">
+            <input type="checkbox" id="" name="location_id">
             <label for="location_id"> Balcony </label><br>
-            <input type="checkbox" id="7" name="location_id">
-            <label for="location_id"> Patio </label><br>
-
-            <button class="btn btn-success btn-lg" type="submit" value="Add Plant">Add Plant</button><br><br>
-            <a href="/plants/index" type="button" class="btn btn-primary btn-lg">My Plants</a>
+            <input type="checkbox" id="" name="location_id">
+            <label for="location_id"> Patio </label><br><br>
+            <button type="submit" class="btn btn-success">Update Plant</button><br><br>
             </form>
+            <form action=<%= "/plants/#{@plant.id}" %> method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-success">Delete Plant</button><br>
+            </form><br>
+            <a href="/plants/index" type="button" class="btn btn-success btn-lg">My Plants</a><br>
         </div>
     </section>
-  </body>
+</body>
 

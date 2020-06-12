@@ -25,13 +25,14 @@ class LocationsController < ApplicationController
       name: params[:name],
       user_id: session[:user_id]
       )
+      @location.save
       redirect "/plants/new"
       end
       #Show
-    #get '/locations/:id' do
-    #  @location = Location.find_by_id(params[:id])
-    #  erb :'/locations/show'
-    #end
+    get '/locations/:id' do
+      @location = Location.find_by_id(params[:id])
+      erb :'/locations/show'
+    end
     #Edit
     get 'locations/:id/edit' do #load edit form
       @location = Location.find_by_id(params[:id])
@@ -45,10 +46,18 @@ class LocationsController < ApplicationController
       @location.save
       redirect to "/locations/#{@location.id}"
     end
-    #show
-    #get '/locations/:id' do
-    #  @location = Location.find_by_id(params[:id])
-    #  erb :'/locations/show'
-    #end
+
+    delete '/locations/:id/delete' do
+        if is_logged_in?
+          @location = Location.find_by_id(params[:id])
+          @location.user_id == session[:user_id]
+          @location.delete
+          flash[:message] = "The location was deleted."
+          redirect to '/locations'
+        else
+          flash[:message] = "Looks like you weren't logged in yet. Please log in below."
+          redirect to '/login'
+        end
+    end
   end
   

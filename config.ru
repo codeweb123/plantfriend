@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 use LocationsController
-#use PlantsController
+use PlantsController
 use UsersController
 run ApplicationController

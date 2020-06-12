@@ -16,7 +16,7 @@ class UsersController < ApplicationController
           flash[:message] = "In order to sign up account, you must have a username, email & a password. Please try again."
           redirect to '/users/signup'
         else
-          @user                        #store it inside an instance variable, (username:) is the name of the column and insert the params[:username] from the params
+          @user.save #store it inside an instance variable, (username:) is the name of the column and insert the params[:username] from the params
           session[:user_id] = @user.id #creates a new key/value pair
           redirect to "/users/login"
         end
