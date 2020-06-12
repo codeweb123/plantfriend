@@ -12,7 +12,7 @@ To install <plant-friend>, follow these steps:
 
 Linux and macOS:
 ```
-<
+
 -download or clone this project
 
 -cd into plant-friend directory
@@ -22,7 +22,7 @@ Linux and macOS:
 -run shotgun
 
 -open your browser and enter the given local url provided by the shotgun server
->
+
 ```
 ## Contributing to <plant-friend>
 <!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
