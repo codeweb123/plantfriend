@@ -22,12 +22,13 @@
 
   h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
-    font-family: 'Gloria Hallelujah';
+    font-family: 'Open Sans';
   }
 
   h1 {
     font-size: 36px;
     line-height: 54px;
+    font-family: 'Gloria Hallelujah';
   }
 
   h2 {
@@ -87,7 +88,7 @@
     width: 100%;
     margin: auto;
 
-    height: 60vh;
+    height: 47vh;
     text-align: center;
     align-items:center;
     justify-content: center;
@@ -99,19 +100,12 @@
     bottom: 0;
     margin: auto;
 
-    background-color: #000000;
+    background-color: #00000050;
     border: 0px solid black;
-    opacity: 0.6;
+    opacity: 1;
   }
   
-  .transbox p {
-    margin: 5%;
-    font-weight: bold;
-    color: #000000;
-  }
+  
 
-  .branding {
-
-  }
 }
 

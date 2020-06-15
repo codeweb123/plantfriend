@@ -1,13 +1,15 @@
+
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
   <body>
-    <section>
         <div class="transbox">
           <br><br><br><h1>Plant Name: <%=@plant.name%></h1>
           <h3>Location: <%=@plant.location_id%></h3><br>
-            <h1>Todo:</h1>
+          <h3>Name: <%=@plant.user_id%></h3><br>
+            <h1>Todos:</h1>
+           
                 <h3>Water in <%=@plant.num_water_day%> days</h3>
                 <h3>Fertilize in <%=@plant.num_fert_day%> days</h3>
                 <h3>Prune in <%=@plant.num_prune_day%> days</h3><br>
@@ -19,5 +21,4 @@
                 <input type="submit" class="btn btn-outline-danger" value="delete">
               </form>
         </div>
-    </section>
   </body>

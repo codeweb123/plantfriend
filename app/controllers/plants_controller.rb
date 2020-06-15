@@ -3,6 +3,7 @@ class PlantsController < ApplicationController
       get '/plants/index' do
         if is_logged_in?  
         @plants = Plant.all
+        @locations = Location.all
           erb :'plants/index'
         else
           flash[:message] = "Looks like you weren't logged in yet. Please log in below."
@@ -35,6 +36,8 @@ class PlantsController < ApplicationController
             :num_prune_day => params[:num_prune_day],
             :location_id => params[:location_id]
           )
+          @plant.user_id = current_user.id
+          @plant.save
           #binding.pry
             redirect to "/plants/index"
             #redirect to "/plants/#{@plant.id}" #redirects t
@@ -43,22 +46,17 @@ class PlantsController < ApplicationController
 
     #READ:GET action show that view page to show that particular plant
       get '/plants/:id' do
-        if is_logged_in?
-        @plant = Plant.find_by(id: params[:id])
-        
+        id = params[:id]
+        @plant = Plant.find_by(id: id)
         erb :'/plants/show'
       end
-    end
-
       #edit / read
       get '/plants/:id/edit' do
-        if is_logged_in?
-        @plant = Plant.find_by(id: params[:id])
-        
-        erb :'/plants/edit'
+        #if is_logged_in? && authorized?(@plant)
+          @plant = Plant.find_by(id: params[:id])
+          current_user
+          erb :'/plants/edit'
       end
-    end
-
     #use middleware (Rack::MethodOverride) to send put/patch/delete requests 
       put '/plants/:id' do
         @plant = Plant.find_by(id: params[:id])
@@ -71,10 +69,10 @@ class PlantsController < ApplicationController
         )
         redirect "/plants/#{@plant.id}"
       end
-    #Delete
+    #Delete a plant
       delete '/plants/:id' do
-        if is_logged_in?
-          @plant = Plant.find_by(id: params[:id])
+         if @plant = Plant.find_by(id: params[:id])
+          current_user
           @plant.destroy
           flash[:message] = "The plant was deleted."
           redirect to '/plants/index'

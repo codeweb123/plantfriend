@@ -3,19 +3,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
   <body>
-    <section>
         <div class="transbox">
         <br><br><h1>My Plants!</h1><br>
           <% @plants.each do |plant| %>
           <% p = plant.created_at %>
           <h6>Added: <%= p.strftime ("%B %e, %Y ") %></h6><br>
-          <h6>Location: <%= plant.location_id%></h6>
+          <h6>Location: <%= plant.location_id%></h6><br>
+          <h6>User: <%= plant.user_id%></h6>
           <h4><img src="../images/leaf.png" width="30" height="30"> <%= plant.name %></h4>
-          <h6><a href="/plants/<%=plant.id%>">click to see todos</a></h6><br><br>
+          <h6><a href="/plants/<%=plant.id%>" style= color:green>click to see todos</a></h6><br><br>
           <%end%>
         <a href="/locations/new" type="button" class="btn btn-success btn-lg">Add Locations</a><br><br>
         <a href="/plants/new" type="button" class="btn btn-success btn-lg">Add Plants</a><br><br>
         <a href="/users/logout" type="button" class="btn btn-success btn-lg">Log Out</a>
         </div>
-    </section>
   </body>

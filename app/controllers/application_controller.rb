@@ -1,5 +1,6 @@
 require './config/environment'
 require 'sinatra/flash'
+require 'date'
 
 class ApplicationController < Sinatra::Base
 
@@ -18,14 +19,17 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
-    def is_logged_in?
-      !!session[:user_id] #double bang operator -> makes it a boolean type(! operator twice) is someone there or not there?
-    end
+
+  def is_logged_in?
+    !!current_user #double bang operator -> makes it a boolean type(! operator twice) is someone there or not there?
   end
 
   def current_user
-    if is_logged_in?
-      User.find(session[:user_id])
-    end
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 end
+end
+  
+  #def current_user
+   # if is_logged_in?
+    #  User.find(session[:user_id])
