@@ -14,12 +14,12 @@
             <h4><label for="num_fert_day">Fertilize every <input id="" type="number" min="1" max="30"  name="plant[num_fert_day]"> days.</label></h4>
             <h4><label for="num_prune_day">Prune every <input id="" type="number" min="1" max="30"  name="plant[num_prune_day]"> days.</label></h4><br>
             
-            <h2>Plant Location:</h2>
-            <% Location.all.each do |type| %>
-            <input type="radio" name="plant[location_id]"
-            value="<%=type.id%>"><%=type.name%></input>
-            <% end %><br><br>
-            
+            <h2>Plant Location:</h2><label for="location_id"></label>
+            <input id="location_id" type="text" name="plant[location_id]"><br><br>
+            <h2>Your Name:</h2>
+            <label for="user_id"></label>
+            <input id="user_id" type="text" name="plant[user_id]"><br><br>
+            <h6>Suggestions: Bedroom, Hallway, Kitchen, Living Room, Office, Balcony, Patio</h6><br><br>
             <button class="btn btn-success btn-lg" type="submit" value="Add Plant">Add Plant</button><br><br>
             <a href="/plants/index" type="button" class="btn btn-primary btn-lg">My Plants</a>
             </form>

@@ -3,6 +3,6 @@ class User < ActiveRecord::Base
     #(Setter method for password)(def password=(string) 
     #encrypted_pw=BCrypt::Password.create(string) self.password_digest = encrypted_pw)
     validates :username, uniqueness: true 
-    has_many :locations, through: :plants
+    has_many :locations
     has_many :plants
 end
