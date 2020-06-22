@@ -1,4 +1,5 @@
 require './config/environment'
+require 'sinatra'
 require 'sinatra/flash'
 require 'date'
 
@@ -13,14 +14,14 @@ class ApplicationController < Sinatra::Base
   end
 #Homepage
   get "/" do
-    logged_in_user_id = session[:user_id]
-    @user = User.find_by(id: logged_in_user_id)
-    erb :index
+    @plants = Plant.all
+    @locations = Location.all
+    erb :'/index'
   end
 
   helpers do
 
-  def is_logged_in?
+  def logged_in?
     !!current_user #double bang operator -> makes it a boolean type(! operator twice) is someone there or not there?
   end
 

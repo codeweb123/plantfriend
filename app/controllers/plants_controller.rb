@@ -1,9 +1,9 @@
 class PlantsController < ApplicationController
-    #Read the plants, show (index) every instance
-      get '/plants/index' do
-        if is_logged_in?  
-        @plants = Plant.all
-        @locations = Location.all
+    #(INDEX)Read the plants, show (index) every instance
+      get '/plants' do
+        if logged_in?  
+          @plants = Plant.all
+          @locations = Location.all
           erb :'plants/index'
         else
           flash[:message] = "Looks like you weren't logged in yet. Please log in below."
@@ -11,16 +11,17 @@ class PlantsController < ApplicationController
         end
       end
            
-    #Show form to create a new instance of a plant.
+    #(NEW)Show form to create a new instance of a plant.
       get '/plants/new' do
-        if is_logged_in?
+        if logged_in?
           erb :'/plants/new'
         else
           flash[:message] = "Looks like you weren't logged in yet. Please log in below."
           redirect to 'users/login'
         end
       end
-    #Process the form and create a plant object in DB.
+
+    #(CREATE)Process the form and create a plant object in DB.
       post '/plants' do
         if params[:name] == "" || 
            params[:num_water_day] == "" || 
@@ -44,20 +45,20 @@ class PlantsController < ApplicationController
         end
     end
 
-    #READ:GET action show that view page to show that particular plant
+    #(SHOW)READ:GET action show that view page to show that particular plant
       get '/plants/:id' do
         id = params[:id]
         @plant = Plant.find_by(id: id)
         erb :'/plants/show'
       end
-      #edit / read
+      #(EDIT) / read
       get '/plants/:id/edit' do
         #if is_logged_in? && authorized?(@plant)
           @plant = Plant.find_by(id: params[:id])
           current_user
           erb :'/plants/edit'
       end
-    #use middleware (Rack::MethodOverride) to send put/patch/delete requests 
+    #(UPDATE) use middleware (Rack::MethodOverride) to send put/patch/delete requests 
       put '/plants/:id' do
         @plant = Plant.find_by(id: params[:id])
         @plant.update(
@@ -69,7 +70,7 @@ class PlantsController < ApplicationController
         )
         redirect "/plants/#{@plant.id}"
       end
-    #Delete a plant
+    #(DESTROY) a plant
       delete '/plants/:id' do
          if @plant = Plant.find_by(id: params[:id])
           current_user

@@ -6,19 +6,21 @@ class UsersController < ApplicationController
         end
       #Processing form and create new object
       post '/users/signup' do
-        if  params[:username] == "" || #check we have bad data
+        if  params[:username] == "" || #check if we have bad data
             params[:email] == "" || 
             params[:password] == ""
-          flash[:message] = "In order to sign up account, you must have a username, email & a password. Please try again."
-          redirect to '/users/signup'
+          flash[:message] = "In order to sign up account, you must have a username, email & password. Please try again."
+          erb :'/users/signup'
+          
         elsif
-          is_logged_in?
+          logged_in?
             flash[:message] = "You are already logged in."
-            redirect to '/users/login' 
+            erb :'/users/login' 
         else  
           @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])  
           @user.save #store it inside an instance variable, (username:) is the name of the column and insert the params[:username] from the params
-            redirect to 'users/login'
+          #binding.pry  
+          redirect to 'users/login'
         end
       end
       #Login
@@ -31,11 +33,11 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(params[:password]) #def authenticate(string)-compares the string to the encrypted (salts & encrypts) password and returns either false or the instance of the user again(true) given by Bcrypt.
           session[:user_id] = @user.id 
           #binding.pry  #logs user in and sets session
-          redirect "/locations/new" 
+          erb :'/locations/new' 
           #direct them to add a location
         else
           flash[:message] = "Your username or password were not correct. Please try again."
-          redirect "/users/login" 
+          redirect to "/users/login" 
         end
       end
       #show page using dynamic routes

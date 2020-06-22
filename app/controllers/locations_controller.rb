@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
     #index/show
     get '/locations/index' do
-      if is_logged_in?
+      if logged_in?
         @user = current_user
         @locations = @user.locations.all
         erb :'/locations/index'
@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
     end
     #Create
     get '/locations/new' do
-      if is_logged_in?
+      if logged_in?
         erb :"/locations/new"
       else
         flash[:message] = "Looks like you weren't logged in yet. Please log in below."
@@ -48,7 +48,7 @@ class LocationsController < ApplicationController
     end
 
     delete '/locations/:id/delete' do
-        if is_logged_in?
+        if logged_in?
           @location = Location.find_by_id(params[:id])
           @location.user_id == session[:user_id]
           @location.delete

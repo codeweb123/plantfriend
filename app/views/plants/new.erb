@@ -6,18 +6,20 @@
         <div class="transbox">
             <br><h1>Add Plant</h1>
             <form method="POST" action="/plants">
+
             <h2><label for="name">Name of Plant:</label></h2>
-            <input id="name" type="text" name="name" required><br><br>
-            <h4><label for="num_water_day">Water every <input id="" type="number" min="1" max="30" name="num_water_day" required> days.</label></h4>
-            <h4><label for="num_fert_day">Fertilize every <input id="" type="number" min="1" max="30"  name="num_fert_day"> days.</label></h4>
-            <h4><label for="num_prune_day">Prune every <input id="" type="number" min="1" max="30"  name="num_prune_day"> days.</label></h4><br>
+            <input type= "text" name= "plant[name]"><br><br>
+
+            <h4><label for="num_water_day">Water every <input id="" type="number" min="1" max="30" name="plant[num_water_day]"> days.</label></h4>
+            <h4><label for="num_fert_day">Fertilize every <input id="" type="number" min="1" max="30"  name="plant[num_fert_day]"> days.</label></h4>
+            <h4><label for="num_prune_day">Prune every <input id="" type="number" min="1" max="30"  name="plant[num_prune_day]"> days.</label></h4><br>
+            
             <h2>Plant Location:</h2>
-            <label for="location_id"></label>
-            <input id="location_id" type="text" name="location_id"><br><br>
-            <h2>Your Name:</h2>
-            <label for="user_id"></label>
-            <input id="user_id" type="text" name="user_id"><br><br>
-            <h6>Suggestions: Bedroom, Hallway, Kitchen, Living Room, Office, Balcony, Patio</h6><br><br>
+            <% Location.all.each do |type| %>
+            <input type="radio" name="plant[location_id]"
+            value="<%=type.id%>"><%=type.name%></input>
+            <% end %><br><br>
+            
             <button class="btn btn-success btn-lg" type="submit" value="Add Plant">Add Plant</button><br><br>
             <a href="/plants/index" type="button" class="btn btn-primary btn-lg">My Plants</a>
             </form>

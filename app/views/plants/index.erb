@@ -10,6 +10,7 @@
           <h6>Added: <%= p.strftime ("%B %e, %Y ") %></h6><br>
           <h6>Location: <%= plant.location_id%></h6><br>
           <h6>User: <%= plant.user_id%></h6>
+          
           <h4><img src="../images/leaf.png" width="30" height="30"> <%= plant.name %></h4>
           <h6><a href="/plants/<%=plant.id%>" style= color:green>click to see todos</a></h6><br><br>
           <%end%>

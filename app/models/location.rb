@@ -1,4 +1,4 @@
 class Location < ActiveRecord::Base
-    belongs_to :user
+    has_many :users, through: :plants
     has_many :plants
 end
