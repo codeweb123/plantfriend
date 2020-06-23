@@ -13,7 +13,8 @@
                 <h3>Water in <%=@plant.num_water_day%> days</h3>
                 <h3>Fertilize in <%=@plant.num_fert_day%> days</h3>
                 <h3>Prune in <%=@plant.num_prune_day%> days</h3><br>
-                            
+                
+                <% if current_user == @plant.user %>            
                 <a href="/plants/<%=@plant.id%>/edit" type="button" class="btn btn-success btn-lg">Edit</a><br><br>
                 <a href="/plants/index" type="button" class="btn btn-success btn-lg">My Plants</a><br><br>
               <form method="post" action="/plants/<%= @plant.id %>">
